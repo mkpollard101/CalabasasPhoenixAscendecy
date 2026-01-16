@@ -18,7 +18,7 @@ async function main() {
 
     // 2. Establish Network Connection
     // Default to Ankr Protocol for high-availability RPC
-    const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL || "https://rpc.ankr.com/eth");
+    const provider = new ethers.providers.StaticJsonRpcProvider(process.env.RPC_URL, { chainId: 1, name: 'mainnet' });
     const wallet = new ethers.Wallet(privateKey, provider);
     console.log(`>> OPERATOR: ${wallet.address}`);
 
