@@ -1,0 +1,27 @@
+name: Phoenix Ascendancy (Infinity Loop)
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # QUANTUM HEARTBEAT: Every 5 minutes
+  workflow_dispatch:      # Manual Override Button
+
+jobs:
+  arbitrage-execution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Neural Network
+        uses: actions/checkout@v3
+
+      - name: Initialize Quantum Environment (Node.js)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install ethers dotenv @flashbots/ethers-provider-bundle
+
+      - name: Ignite Neural Link
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          RPC_URL: https://rpc.ankr.com/eth
+        run: node AgentWallet.js
