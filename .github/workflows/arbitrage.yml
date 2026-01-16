@@ -24,6 +24,6 @@ jobs:
       - name: Ignite Neural Link
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          RPC_URL: https://eth.public-rpc.com
+          RPC_URL: https://rpc.flashbots.net
           CHAIN_ID: 1
         run: node AgentWallet.js --network mainnet
