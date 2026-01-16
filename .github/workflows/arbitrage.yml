@@ -18,7 +18,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install ethers dotenv @flashbots/ethers-provider-bundle
+        run: npm install ethers@5.7.2 dotenv @flashbots/ethers-provider-bundle
 
       - name: Ignite Neural Link
         env:
