@@ -1,23 +1,16 @@
 {
-  "name": "phoenix-omega-swarm",
+  "name": "calabasas-phoenix-ascendecy",
   "version": "1.0.0",
-  "description": "A Web7 Neuro-Symbolic Agent Swarm for Sovereign Wealth Governance.",
-  "main": "src/AgentSwarm.js",
+  "description": "Advanced implementation of hybrid Quantum-Classical Neural Networks",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "ignite": "node src/AgentSwarm.js",
-    "scan": "echo 'SCANNING SPATIAL WEB...' && node src/AgentSwarm.js"
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mkpollard101/CalabasasPhoenixAscendecy.git"
-  },
-  "keywords": [
-    "web7",
-    "agent-swarm",
-    "quantum-resistance",
-    "sovereign-wealth"
-  ],
-  "author": "Marcus Kareem Pollard (The Architect)",
-  "license": "UNLICENSE"
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.8.0"
+  }
 }
