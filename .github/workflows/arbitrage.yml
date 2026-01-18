@@ -1,29 +1,33 @@
-name: Phoenix Ascendancy (Infinity Loop)
+name: Phoenix Execution Unit (Body)
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  repository_dispatch:
+    types: [execute_trade_protocol] # LISTENS FOR THE ORACLE
   workflow_dispatch:
 
 jobs:
-  arbitrage-execution:
+  Execute-Trade:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Neural Network
-        uses: actions/checkout@v3
+      - name: Acknowledge Command
+        run: |
+          echo ">> SIGNAL RECEIVED FROM ORACLE."
+          echo ">> TARGET: ${{ github.event.client_payload.chain }}"
 
-      - name: Initialize Quantum Environment (Node.js)
-        uses: actions/setup-node@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
-
+          
       - name: Install Dependencies
-        run: npm install ethers@5.7.2 dotenv @flashbots/ethers-provider-bundle@0.6.1
+        run: npm install
 
-
-      - name: Ignite Neural Link
+      - name: 🚀 EXECUTE ON BASE L2
+        run: node AgentWallet.js
         env:
+          RPC_URL: "https://mainnet.base.org" 
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          RPC_URL: https://rpc.flashbots.net
-          CHAIN_ID: 1
-        run: node AgentWallet.js --network mainnet
+
