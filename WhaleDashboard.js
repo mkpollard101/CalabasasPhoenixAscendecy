@@ -1,25 +1,21 @@
-// oracle/MarketTelemetry.js
-// SUBJECT: High-Frequency Data Stream for Members
-// PROTOCOL: FLOWER OF LIFE DATA SCHEMA
+// ui/WhaleDashboard.js
+// TARGET: MEMBERSHIP SALES PAGE
 
-export class MarketTelemetry {
-    constructor() {
-        this.geometry = "FLOWER_OF_LIFE";
-        // CHANGED: From Physical Sensors to Digital Feeds
-        this.feeds = ["BTC_VOLATILITY", "WHALE_WALLET_WATCH", "AI_SENTIMENT"];
-    }
+import React from 'react';
 
-    /**
-     * CAPABILITY: The Alpha Stream
-     * This is what your members pay for: Information they can't get elsewhere.
-     */
-    async scanDigitalHorizon() {
-        console.log("[ORACLE] Scanning Global Liquidity Vectors...");
-        // Simulation of high-value data
-        return {
-            market_sentiment: "BULLISH_DIVERGENCE",
-            whale_movement: "DETECTED_BINANCE_INFLOW",
-            signal_strength: "99.9%"
-        };
-    }
-}
+const WhaleDashboard = () => {
+    return (
+        <div style={{background: 'black', color: 'cyan', padding: '20px', fontFamily: 'monospace'}}>
+            <h1>PHOENIX OMEGA // INNER CIRCLE</h1>
+            <p>STATUS: MEMBERSHIP ONLY</p>
+            
+            <div style={{border: '2px solid gold', padding: '20px', margin: '20px 0'}}>
+                <h2>ACCESS TIER: SOVEREIGN</h2>
+                <h3>PRICE: $1,000 USD</h3>
+                <p>INCLUDES: AI Market Signals + Private Codebase</p>
+                <button style={{background: 'gold', color: 'black', fontWeight: 'bold'}}>BUY ACCESS TOKEN</button>
+            </div>
+        </div>
+    );
+};
+export default WhaleDashboard;
